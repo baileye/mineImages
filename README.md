@@ -21,6 +21,17 @@ This repository will cover how to set up a pipeline that will let you test out A
 - [Custom Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/)
 - [PowerBI](https://powerbi.microsoft.com/en-us/)
 
+## Repository Contents
+
+### Files
+
+- [package.json](package.json)
+  - JSON file that is used as part of the deployment of the Azure Functions
+- [vision.js](vision.js)
+  - Azure Function code that reads from Blob Storage, calls Azure Cognitive Services, and writes results to Azure Storage
+- [customVision.js](customVision.js)
+  - Azure Function code that reads from Blob Storage, calls Azure Custom Vision API, and writes results to Azure Storage
+
 # Deployment Steps
 
 - Create a new Function app using an always-on App service plan (i.e. not the free function app -- this is for demo purposes because we don't want a delay, we could also manually trigger the function, but where's the fun in that)
@@ -49,3 +60,11 @@ This repository will cover how to set up a pipeline that will let you test out A
   - Change the keys as needed
 - Upload 'package.json' to the site->wwwroot
   - Execute 'npm install' in the Kudu CMD console
+  
+TODO: Add Cognitive Services deployment steps
+TODO: Add custom vision deployment steps
+TODO: Add custom vision training steps
+TODO: Add screenshots of the deployment process
+TODO: Add PowerBI set up steps
+TODO: Create ARM template for complete deployment (will require separate repos)
+
