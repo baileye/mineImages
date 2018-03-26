@@ -1,6 +1,6 @@
 # Use Azure Cognitive Services to see what's in your image archive
 
-This repository will cover how to set up a pipeline that will let you test out Azure Cognitive Services to see what's in your image archive. 
+This repository will cover how to set up a pipeline that will let you test out Azure Cognitive Services to see what's in your image archive. The code and contents here are intended as a sample and proof-of-concept only.
 
 ## Scope
 
