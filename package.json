@@ -1,0 +1,9 @@
+{
+  "name": "mineimages",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+      "jsonexport": "^2.0.11"
+  }
+}
