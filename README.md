@@ -68,6 +68,6 @@ This repository will cover how to set up a pipeline that will let you test out A
 - TODO: Add custom vision training steps
 - TODO: Add screenshots of the deployment process
 - TODO: Add PowerBI set up steps
-- TODO: Create ARM template for complete deployment (will require separate repos)
+- TODO: Create [ARM template](https://docs.microsoft.com/en-us/azure/azure-functions/functions-infrastructure-as-code) for complete deployment (will require separate repos)
 
 
