@@ -61,10 +61,13 @@ This repository will cover how to set up a pipeline that will let you test out A
 - Upload 'package.json' to the site->wwwroot
   - Execute 'npm install' in the Kudu CMD console
   
-TODO: Add Cognitive Services deployment steps
-TODO: Add custom vision deployment steps
-TODO: Add custom vision training steps
-TODO: Add screenshots of the deployment process
-TODO: Add PowerBI set up steps
-TODO: Create ARM template for complete deployment (will require separate repos)
+# TODO
+
+- TODO: Add Cognitive Services deployment steps
+- TODO: Add custom vision deployment steps
+- TODO: Add custom vision training steps
+- TODO: Add screenshots of the deployment process
+- TODO: Add PowerBI set up steps
+- TODO: Create ARM template for complete deployment (will require separate repos)
+
 
