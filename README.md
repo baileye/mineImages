@@ -11,7 +11,7 @@ This repository will cover how to set up a pipeline that will let you test out A
   - V2: Trained Custom Vision
 - Function writes response to Azure Storage
 - Power BI visualises the data
-  - "Find all images with Eoin and a horse"
+  - "Find all images of a man with a blue background on grass"
 
 ## Technologies
 
