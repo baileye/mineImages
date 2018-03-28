@@ -47,10 +47,15 @@ This repository will cover how to set up a pipeline that will let you test out A
   - Connect Storage Explorer to your Azure account
   - Open the specific storage account you created above
 
+  ## Cognitive Services
+  
+- Get a [Cognitive Services API Key](https://azure.microsoft.com/en-gb/try/cognitive-services/)
+  - In the 'vision.js' set the variable 'visionApiKey' to the API key you get when you register
+
 ## Function App
 
-- Create a new Function app using an always-on App service plan (i.e. not the free function app -- this is for demo purposes because we don't want a delay, we could also manually trigger the function, but where's the fun in that)
-- To confirm Always On is set you need to have created the function, so we're jumping ahead, but for completeness I put it here for now…
+- Create a new Function app using an always-on App service plan
+- To confirm Always On... Always On ensure instance execution of the trigger, but is more expensive. For demo and PoC use Always On to see results more quickly.
   - Go to the function
   - Click on 'Platform Features' tab
   - Click on 'Application settings'
@@ -64,14 +69,35 @@ This repository will cover how to set up a pipeline that will let you test out A
   - In 'Azure Blob Storage Trigger' -> 'Path' enter the container name: 'vision', ensure the '/{name}' is after this also, the {name} value is the parameter for a new blob
   - Click on 'Storage account connection' -> 'new', and select the storage account created above named 'azureImageProcessing'
   - Click 'Create'
-- Copy the code from this github repo to the function
-  - Change the keys as needed
+- Create the output trigger to Azure blog storage
+  - On the newly created function click on 'Integrate'
+  - For Outputs select 'New Output' and choose 'Azure Blob Storage'
+  - Set the 'Path' to 'visionResults/{name}\_{sys.utcNow:yyyy-MM-dd_hh-mm-ss}.csv'
+  - Select the Storage account 'azureImageProcessing' from the Storage Account connection dropdown
+  - Click on 'Save'
+- Copy the code from this github repo to the function file 'index.js' which you can edit in the function
+  - The file 'vision.js' is the standard Azure Vision API code
+  - Ensure you have changed the value for 'visionApiKey'
 - Upload 'package.json' to the site->wwwroot
-  - Execute 'npm install' in the Kudu CMD console
+  - Visit the 'Platofrm Features' tab in the Azure Function
+  - Click on 'Advanced tools (Kudu)'
+  - Navigate to 'Debug Console'->'CMD'
+  - Click on 'site'->'wwwroot'
+  - Drag and drop the 'package.json' file to the browser window
+  - In the browser window cmd console, execute 'npm install'
+- From this point on, uploading an image to the Azure storage container 'vision' will trigger the function, which will call the cognitive services API, and write the results to a CSV file in the Azure Storage container 'visionResults'
+- From here you can analyse and view this data however you want. Read on to see how to use PowerBi to start analysiing this data in your Storage account
+
+## PowerBi
+
+- Coming soon...
+
+## Custom Vision API
+
+- Coming soon...
   
 # TODO
 
-- TODO: Add Cognitive Services deployment steps
 - TODO: Add custom vision deployment steps
 - TODO: Add custom vision training steps
 - TODO: Add screenshots of the deployment process
