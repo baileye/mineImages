@@ -19,7 +19,7 @@ This repository will cover how to set up a pipeline that will let you test out A
 - [Azure Functions](https://azure.microsoft.com/en-gb/services/functions/)
 - [Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/)
 - [Custom Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/)
-- [PowerBI](https://powerbi.microsoft.com/en-us/)
+- [PowerBI](https://powerbi.microsoft.com/en-us/) - currently Windows only as using Power BI Desktop
 
 ## Repository Contents
 
@@ -92,10 +92,27 @@ This repository will cover how to set up a pipeline that will let you test out A
 
 - Coming soon...
 
+- Download [PowerBI Desktop](https://powerbi.microsoft.com/en-us/desktop/)
+- Install PowerBI desktop
+- Connect PowerBI to the Azure Storage account above, using the 'visionResults' container
+- Create the reports...
+  - ...
+
 ## Custom Vision API
 
 - Coming soon...
-  
+
+- Create a (Custom Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/)
+- Create a new project
+- Set up the question/problem
+- Train the Custom Vision API
+  - Change answers with test images to train the Machine Learning model
+- Copy the Custom Vsion Project ID and custom vision API key to 'customVision.js'
+- Create a new function in the same function app created above, set up the input triggers and output triggers using the containers 'customVision' and 'customVisionResults' respectively.
+- Copy the 'customVision.js' file to the new function, using the same steps as above
+- Images copied to 'customVision' container will now show the results in the 'customVisionResults' container
+- PowerBI report setup for Custom Vision coming soon....
+
 # TODO
 
 - TODO: Add custom vision deployment steps
